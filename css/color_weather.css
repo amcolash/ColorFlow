@@ -1,0 +1,43 @@
+#weather_wrapper {
+	background: purple;
+}
+
+#weather_wrapper img {
+	background: silver;
+}
+
+#Current {
+	background: yellow;
+}
+
+#Forecast1 {
+	background: red;
+}
+
+#Forecast2 {
+	background: blue;
+}
+
+#Forecast3 {
+	background: green;
+}
+
+#Updated {
+	background: brown;
+}
+
+#updateTime {
+	background: orange;
+}
+
+#updateIcon {
+	background: pink;
+}
+
+#Location {
+	background: gray;
+}
+
+#gpsIcon {
+	background: teal;
+}

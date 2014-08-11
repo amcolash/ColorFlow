@@ -1,0 +1,47 @@
+hr {
+	border: 0;
+	height: 2px;
+	opacity: .4;
+	background-image: -webkit-linear-gradient(left, rgba(255,255,255,0), rgba(255,255,255,0.75), rgba(255,255,255,0)); 
+	margin: 5px 0px 2px;
+}
+
+#agenda {
+	overflow-y: scroll;
+        -webkit-overflow-scrolling: touch;
+	width: 290px;
+	height: 170px;
+	margin: auto;
+}	
+
+.agenda-item {
+	margin: 2px;
+	border: 2px;
+	padding: 2px;
+}
+
+.agenda-color {
+	float: left;
+	width: 12px;
+	height: 12px;
+	background-color: #000000;
+	opacity: .6;
+	border-radius: 3px;
+	margin-right: 4px;
+	margin-top: 6px;
+}
+
+#agenda_status {
+	margin-top: 65px;
+	font-size: 12px;
+}
+
+#agenda_update_status, #agenda_update_icon {
+	display: inline-block;
+}
+
+#agenda_update_icon img {
+	vertical-align: middle;
+	height: 12px;
+	width: auto;
+}

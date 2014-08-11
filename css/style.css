@@ -1,0 +1,42 @@
+* {
+	padding: 0;
+	margin: 0;
+}
+
+@font-face { 
+	font-family: 'Conv_weblysleekuisl';
+	src: url('../fonts/weblysleekuisl.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+	font-smooth:always;
+	-webkit-font-smoothing: antialiased; 
+}
+
+body {	
+	background-size: 100%;	
+	text-align: center;
+	vertical-align: middle;
+	font-family: 'Conv_weblysleekuisl', sans-serif;
+	font-weight: 300;
+}
+
+.Wrapper {
+	color: white;
+	text-shadow: 2px 2px 2px rgba(0, 0, 0, .4);
+	text-align: center;
+	margin: auto;	
+	width: 325px;
+	overflow: hidden;
+}
+
+.vr, .timevr, .weathervr {
+	background-image: -webkit-linear-gradient(top, rgba(255,255,255,0), rgba(255,255,255,0.65), rgba(255,255,255,0));
+	display: inline-block;
+	height: 165px;
+	width: 4px;
+	vertical-align:top;
+}
+
+.debug {
+	display: none;
+}

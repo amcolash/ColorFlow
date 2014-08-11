@@ -1,0 +1,84 @@
+#weather_wrapper {
+	height: 170px;
+}
+
+#weather_wrapper div {
+	font-family: 'Conv_weblysleekuisl', sans-serif;
+	font-weight: 600;
+	color: white;
+	font-size: 16px;
+	text-shadow: 1px 1px 1px rgba(0, 0, 0, .4);
+}
+
+#weather_wrapper img {
+	margin: 3px;
+}
+
+#upcoming_weather {
+	padding-top: 15px;
+}
+
+#Current {
+	margin-right: 5px;
+}
+
+#Current img {
+	width: 64px;
+	height: auto;
+}
+
+.Weather, .Forecast {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+#CurrentTemp {
+	font-size: 26px !important;
+}
+
+.Forecast {
+	width: 64px;
+}
+
+.forecastIcon img {
+	width: 32px;
+	height: auto;
+}
+
+.forecastTemp{
+	display: inline-block;
+	font-size: 12px !important;
+}
+
+#Updated {
+	padding-top: 15px;
+	width: 225px;
+	margin-left: auto;
+	position: absolute;
+	right: 0px;
+}
+
+#Updated div {
+	display: inline-block;
+	vertical-align: middle;
+	margin-left: auto !important;
+	font-size: 13px !important;
+}
+
+#gpsIcon img {	
+	width: 20px;
+	height: auto;
+	margin: 0px;
+}
+
+#updateIcon img {
+	width: 20px;
+	height: auto;
+	padding: 0px;
+	margin: 0px;
+}
+
+#small {
+	height: 103px;
+	width: 3px;
+}

@@ -1,0 +1,60 @@
+p.time, p.date {
+	color: rgba(255, 255, 255, .8);
+	-webkit-filter: blur(1px);
+	text-transform: uppercase;
+}
+
+p.time {
+	font-size: 42px;
+	text-align: right;
+}
+
+p.date {
+	font-size: 24px;
+	text-align: left;
+	margin: 2px 0px;
+}
+
+p.day {
+	font-size: 35px;
+	text-align: right;
+	margin: 12px 0px 0px 0px;
+}
+
+.selected {
+	color: rgba(255, 255, 255, 1) ! important;
+	-webkit-filter: none ! important;
+}
+
+#time-container {
+	display: inline-block;
+	vertical-align: middle;
+	margin: 0px 2px 0px 3px;
+	width: 115px;
+}
+
+#day-date {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+#day-container {
+	margin: 0px 8px 4px 0px;
+}
+
+#date-container .left {
+	width: 120px;
+}
+
+#date-container .right {
+	width: 30px;
+}
+
+.left, .right {
+	display: inline-block;
+	padding: 0px 4px;
+}
+
+#short {
+	height: 103px;
+}

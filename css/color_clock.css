@@ -1,0 +1,39 @@
+#time_wrapper {
+    background: purple;
+}
+
+#mySwipe {
+    background: black;
+}
+
+#wrapper {
+    background: pink;
+}
+
+#time-container {
+    background: orange;
+}
+
+#time-container .left {
+    background: green;
+}
+
+#time-container .right {
+    background: red;
+}
+
+#day-date {
+    background: blue;
+}
+
+#day-date .left {
+    background: teal;
+}
+
+#day-date .right {
+    background: brown;
+}
+
+#day-container {
+    background: yellow;
+}

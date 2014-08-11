@@ -1,0 +1,195 @@
+<!DOCTYPE HTML> 
+<html>
+<head>
+<title>ColorFlow</title>
+
+<meta http-equiv="X-UA-Compatible" content="IE=8">
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'/>
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta content='black-translucent' name='apple-mobile-web-app-status-bar-style'>
+
+<!-- iPhone 5 (Retina) SPLASHSCREEN + Icon-->
+<link href="img/apple-touch-startup-image-640x1096.png" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image">
+<link href='img/icon.png' rel='apple-touch-icon'/>
+
+<link href='css/agenda.css' rel='stylesheet'/>
+<link href='css/clock.css' rel='stylesheet'/>
+<link href='css/settings.css' rel='stylesheet'/>
+<link href='css/style.css' rel='stylesheet'/>
+<link href='css/swipe_req.css' rel='stylesheet'/>
+<link href='css/weather.css' rel='stylesheet'/>
+
+</head>
+<body>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src='js/swipe.js'></script>
+<script type="text/javascript" src="js/zipcode.js"></script>
+<script type="text/javascript" src="js/woeid.js"></script>
+<script type="text/javascript" src="js/gps.js"></script>
+<script type="text/javascript" src="js/weather.js"></script>
+<script type="text/javascript" src="js/agenda.js"></script>
+<script type="text/javascript" src="js/date.js"></script>
+<script type="text/javascript" src="js/settings.js"></script>
+	
+
+<div id='mySwipe' style='max-width:330px;margin:0 auto' class='swipe'>
+  <div class='swipe-wrap'>	
+	<div id="agenda_wrapper" class="Wrapper">
+		<div id="agenda"></div>
+		<div id="agenda_status">
+			<div id="agenda_update_status">Updating</div>
+			<div id="agenda_update_icon"></div>
+		</div>
+	</div>
+	
+	<div id="time_wrapper" class="Wrapper">
+		<div id="time-container" class="Time">
+			<div class="left">
+				<p id="time1-1" class="time"></p>
+				<p id="time1-2" class="time selected"></p>
+				<p id="time1-3" class="time"></p>
+			</div>
+			<div class="timevr">&nbsp</div>
+			<div class="right">
+				<p id="time2-1" class="time"></p>
+				<p id="time2-2" class="time selected"></p>
+				<p id="time2-3" class="time"></p>
+			</div>
+		</div>
+	
+		<div id="day-date" class="Time">
+			<div id="date-container">
+				<div class="left">
+					<p id="date1-1" class="date"></p>
+					<p id="date1-2" class="date selected"></p>
+					<p id="date1-3" class="date"></p>
+				</div>
+				<div id="short" class="timevr">&nbsp</div>
+				<div class="right">
+					<p id="date2-1" class="date"></p>
+					<p id="date2-2" class="date selected"></p>
+					<p id="date2-3" class="date"></p>
+				</div>
+			</div>	
+			<div id="day-container">
+				<p id="dayofweek" class="day"></p>
+			</div>
+		</div>
+	</div>
+
+	<div id="weather_wrapper" class="Wrapper">
+
+		<div id="upcoming_weather">
+			<div id="Current" class="Weather">
+				<div id="CurrentIcon"> <img src="img/icons/updating.png" /> </div>
+				<div id="CurrentTemp"></div>
+				<div id="CurrentCondition"></div>
+			</div>
+			
+			<div id="Forecast" class="Weather">
+				<div id="small" class="weathervr">&nbsp</div>
+				<div id="Forecast1" class="Forecast">
+					<div id="F1Icon" class="forecastIcon"></div>
+					<div id="T1">
+						<div id="F1High" class="forecastTemp"></div>
+						<div id="F1Low" class="forecastTemp"></div>
+					</div>
+					<div id="F1Day"></div>
+				</div>
+				<div id="small" class="weathervr">&nbsp</div>
+				<div id="Forecast2" class="Forecast">
+					<div id="F2Icon" class="forecastIcon"></div>
+					<div id="T2">
+						<div id="F2High" class="forecastTemp"></div>
+						<div id="F2Low" class="forecastTemp"></div>
+					</div>
+					<div id="F2Day"></div>
+				</div>
+				<div id="small" class="weathervr">&nbsp</div>
+				<div id="Forecast3" class="Forecast">
+					<div id="F3Icon" class="forecastIcon"></div>
+					<div id="T3">
+						<div id="F3High" class="forecastTemp"></div>
+						<div id="F3Low" class="forecastTemp"></div>
+					</div>
+					<div id="F3Day"></div>
+				</div>
+			</div>
+		</div>
+
+		<div id="Updated">
+			<div id="gpsIcon">
+				<img src="img/gps.png"/>
+			</div>
+			<div id="Location">Updating...</div>
+			<div id="updateTime"></div>
+			<div id="updateIcon"></div>
+		</div>
+	</div>
+
+  </div>
+</div>
+
+<div class="debug" id="buttons" style='text-align:center;padding-top:20px;'>
+	<button onclick='mySwipe.prev()'>prev</button> <button onclick='mySwipe.next()'>next</button>
+</div>
+
+<div id="settings">
+	<div id="settings_title">Settings</div>
+	<hr>
+	<div id="settings_list">
+		<div>Manual Location Type:
+			<br>
+			<input type="radio" name="locationType" value="zip"> Zipcode </input>
+			<input type="radio" name="locationType" value="woeid"> WOEID (Non-USA)</input>
+		</div>
+		<div>Location Value: <input type="text" id="locationValue" size="10"/></div>
+		<div>Temperature Units:
+			<br>
+			<input type="radio" name="units" value="f"/> F </input>
+			<input type="radio" name="units" value="c"/> C</input>
+		</div>
+		<div>Refresh Rate (In Minutes): <input type="text" id="refreshRate" size="4"/></div>
+		<div>Use GPS <input type="checkbox" id="useGPS" value="useGPS"/></div>
+		<div>Hour Format:
+			<br>
+			<input type="radio" name="hourFormat" value="12h"/> 12h </input>
+			<input type="radio" name="hourFormat" value="24h"/> 24h</input>
+		</div>
+		<div>Max Events Shown: <input type="text" id="maxShownEvents" size="4"/></div>
+		<div>Calendar URL (Use Yahoo Pipes JSON output + Requires Restart): <input type="text" id="calBaseUrl" size="30"/></div>
+		<div>Default Start Page:
+			<br>
+			<input type="radio" name="startPage" value="0"/> Calendar </input>
+			<input type="radio" name="startPage" value="1"/> Clock </input>
+			<input type="radio" name="startPage" value="2"/> Weather</input>
+		</div>
+		<hr>
+		<div> Debug Mode (Requires Restart) <input type="checkbox" id="debug" value="debug"/></div>
+		<div class="debug">Swipe Speed(ms): <input type="text" id="swipeSpeed" size="5"/></div>
+		<div class="debug">Fade Length(ms): <input type="text" id="fadeTime"size="6"/></div>
+		<div class="debug">ajaxTimeout(ms): <input type="text" id="getTimeout"size="6"/></div>
+		<div class="debug"> Debug Color Mode (Requires Restart) <input type="checkbox" id="debugColor" value="debugColor"/></div>
+		<div class="debug buttons" id="settings_clear_cookies" onClick="clearAllCookies();">Clear Cookies</div>
+	</div>
+	<hr>
+	<div class="buttons" id="settings_reset" onClick="resetSettings();">Reset Settings</div>
+	<div class="buttons" id="settings_save" onClick="saveSettings();">Save Settings</div>
+</div>
+
+<div id="settings_icon" onClick="$('#settings').fadeToggle();">
+	<img src="img/Settings.png"/>
+</div>
+
+<script type="text/javascript" src="js/initialize.js"></script>
+
+<script>	
+var elem = document.getElementById('mySwipe');
+window.mySwipe = Swipe(elem, {
+	startSlide: startPage,
+	continuous: false,
+});
+</script>
+
+</body>
+</html>

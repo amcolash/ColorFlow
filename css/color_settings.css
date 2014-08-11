@@ -1,0 +1,19 @@
+#buttons {
+    background: cyan;
+}
+
+#settings {
+    background: yellow;
+}
+
+#settings_save {
+    background: purple;
+   }
+
+#settings_icon {
+    background: red;
+}
+
+#settings_icon img {
+    background: blue;
+}

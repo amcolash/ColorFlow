@@ -1,0 +1,19 @@
+#agenda_wrapper {
+	background: blue;
+}
+
+#agenda {
+	background: pink;
+}
+
+#agennda_status {
+	background: orange;
+}
+
+.agenda_item {
+	background: yellow;
+}
+
+hr {
+	background: teal;
+}
